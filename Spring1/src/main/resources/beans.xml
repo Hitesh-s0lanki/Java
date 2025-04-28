@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="alien" class="com.spring1.Alien" autowire="byName">
+<!--        <property name="age" value="21" />-->
+        <constructor-arg value="21" />
+<!--        <property name="com" ref="lap2"/>-->
+    </bean>
+
+    <bean id="com1" class="com.spring1.Laptop">
+    </bean>
+
+    <bean id="com" class="com.spring1.Desktop">
+    </bean>
 
 </beans>

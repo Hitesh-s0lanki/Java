@@ -1,4 +1,4 @@
-package com.learning.demo;
+package com.learning.demo.repo;
 
 import com.learning.demo.model.Laptop;
 import org.springframework.stereotype.Repository;

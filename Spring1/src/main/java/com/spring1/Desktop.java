@@ -1,4 +1,10 @@
 package com.spring1;
 
-public class Desktop {
+import org.springframework.stereotype.Component;
+
+@Component
+public class Desktop implements Computer{
+    public void display() {
+        System.out.println("Coding using Desktop...");
+    }
 }

@@ -1,4 +1,11 @@
 package com.spring1;
 
-public class Laptop {
+import org.springframework.stereotype.Component;
+
+@Component
+public class Laptop implements Computer {
+    @Override
+    public void display() {
+        System.out.println("Laptop Display");
+    }
 }
