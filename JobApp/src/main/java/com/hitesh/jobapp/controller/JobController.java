@@ -1,4 +1,4 @@
-package com.hitesh.jobapp;
+package com.hitesh.jobapp.controller;
 
 import com.hitesh.jobapp.model.JobPost;
 import com.hitesh.jobapp.service.JobService;
