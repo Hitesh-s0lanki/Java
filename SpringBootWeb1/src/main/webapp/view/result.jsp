@@ -2,7 +2,8 @@
 
 <html>
 <body>
-    <h1>Result is : <%= session.getAttribute("result") %> </h1>
-    <h1>Result is : ${result}</h1>
+    <h2>Welcome to Java Spring Boot</h2>
+
+    <p>${alien}</p>
 </body>
 </html>
