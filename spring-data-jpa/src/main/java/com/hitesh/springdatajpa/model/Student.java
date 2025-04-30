@@ -1,11 +1,17 @@
-package com.hitesh.springjdbc.model;
+package com.hitesh.springdatajpa.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
+@Entity
 public class Student {
+
+    @Id
     private int rollNo;
     private String name;
     private int marks;

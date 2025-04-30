@@ -1,43 +1,55 @@
-package com.hitesh.jobapp.controller;
+package com.hitesh.backend.controller;
 
-import com.hitesh.jobapp.model.JobPost;
-import com.hitesh.jobapp.service.JobService;
+import com.hitesh.backend.model.JobPost;
+import com.hitesh.backend.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@CrossOrigin(origins = "*")
 public class JobController {
 
     @Autowired
     private JobService service;
 
-    @GetMapping({"/", "home"})
-    public String home() {
-        return "home";
+    @GetMapping("jobPosts")
+    public List<JobPost> getAllJobs() {
+        return service.getAllJobs();
     }
 
-    @GetMapping("addjob")
-    public String addJob() {
-        return "addjob";
+    @GetMapping("jobPost/{postId}")
+    public JobPost getJob(@PathVariable("postId")  int postId) {
+        return service.getJob(postId);
     }
 
-    @PostMapping("handleForm")
-    public String handleForm(JobPost jobPost) {
+    @PostMapping("jobPost")
+    public String addJob(@RequestBody JobPost jobPost) {
         service.addJob(jobPost);
-        return "success";
+        return "Done";
     }
 
-    @GetMapping("viewalljobs")
-    public String handleForm(Model model) {
+    @PutMapping("jobPost/{postId}")
+    public JobPost updateJob(@PathVariable("postId")  int postId, @RequestBody JobPost jobPost) {
+        service.updateJob(postId, jobPost);
+        return service.getJob(postId);
+    }
 
-        List<JobPost> jobs = service.getAllJobs();
-        model.addAttribute("jobPosts", jobs);
+    @DeleteMapping("jobPost/{postId}")
+    public String deleteJob(@PathVariable("postId")  int postId) {
+        service.deleteJob(postId);
+        return "Job deleted Successfully with id " + postId;
+    }
 
-        return "viewalljobs";
+    @GetMapping("load")
+    public String load(){
+        service.load();
+        return "Loaded the Static Data";
+    }
+
+    @GetMapping("jobPosts/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable String keyword) {
+        return service.search(keyword);
     }
 }
