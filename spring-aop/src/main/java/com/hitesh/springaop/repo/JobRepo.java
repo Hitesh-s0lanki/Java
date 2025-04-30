@@ -8,7 +8,7 @@ import com.hitesh.springaop.model.JobPost;
 
 
 @Repository
-public interface JobPostRepo extends JpaRepository<JobPost, Integer> {
+public interface JobRepo extends JpaRepository<JobPost, Integer> {
 
     List<JobPost> findByPostProfileContainingOrPostDescContaining(String postProfile, String postDesc);
 
