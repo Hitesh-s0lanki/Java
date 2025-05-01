@@ -1,7 +1,7 @@
-package com.hitesh.springsecurity.service;
+package com.hitesh.backend.service;
 
-import com.hitesh.springsecurity.model.User;
-import com.hitesh.springsecurity.repository.UserRepo;
+import com.hitesh.backend.model.User;
+import com.hitesh.backend.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

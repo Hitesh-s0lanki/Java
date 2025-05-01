@@ -1,6 +1,6 @@
-package com.hitesh.springsecurity.repository;
+package com.hitesh.backend.repo;
 
-import com.hitesh.springsecurity.model.User;
+import com.hitesh.backend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepo extends JpaRepository<User, Integer> {

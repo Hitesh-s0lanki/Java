@@ -1,4 +1,4 @@
-package com.hitesh.springsecurity.model;
+package com.hitesh.backend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,4 +1,4 @@
-package com.hitesh.springsecurity.config;
+package com.hitesh.backend.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

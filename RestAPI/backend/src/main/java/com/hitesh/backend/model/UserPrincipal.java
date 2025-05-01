@@ -1,4 +1,4 @@
-package com.hitesh.springsecurity.model;
+package com.hitesh.backend.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
