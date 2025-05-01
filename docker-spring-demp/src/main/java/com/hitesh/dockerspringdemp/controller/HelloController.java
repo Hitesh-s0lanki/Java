@@ -1,4 +1,4 @@
-package com.hitesh.dockerspringdemp;
+package com.hitesh.dockerspringdemp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

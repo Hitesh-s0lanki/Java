@@ -1,4 +1,3 @@
-FROM ubuntu:latest
-LABEL authors="hites"
-
-ENTRYPOINT ["top", "-b"]
+FROM openjdk:21-jdk
+ADD target/rest-demo.jar rest-demo.jar
+ENTRYPOINT ["java","-jar","/rest-demo.jar"]

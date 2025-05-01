@@ -1,4 +1,3 @@
-FROM ubuntu:latest
-LABEL authors="hites"
-
-ENTRYPOINT ["top", "-b"]
+FROM openjdk:21-jdk
+ADD target/student-app.jar student-app.jar
+ENTRYPOINT ["java","-jar","/student-app.jar"]
