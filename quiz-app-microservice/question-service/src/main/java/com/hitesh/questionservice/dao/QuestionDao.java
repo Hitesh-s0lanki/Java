@@ -1,6 +1,6 @@
-package com.hitesh.quizapp.dao;
+package com.hitesh.questionservice.dao;
 
-import com.hitesh.quizapp.model.Question;
+import com.hitesh.questionservice.model.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -12,6 +12,6 @@ public interface QuestionDao extends JpaRepository<Question, Long> {
 
     List<Question> findAllByCategory(String category);
 
-    @Query(value = "SELECT * FROM question q Where q.category=:category ORDER BY RANDOM() LIMIT :numQ", nativeQuery = true)
-    List<Question> findRandomQuestionsByCategory(String category, int numQ);
+    @Query(value = "SELECT q.id FROM question q Where q.category=:category ORDER BY RANDOM() LIMIT :numQ", nativeQuery = true)
+    List<Integer> findRandomQuestionsByCategory(String category, int numQ);
 }

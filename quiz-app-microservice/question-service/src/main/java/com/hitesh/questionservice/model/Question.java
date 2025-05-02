@@ -1,4 +1,4 @@
-package com.hitesh.quizapp.model;
+package com.hitesh.questionservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

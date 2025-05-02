@@ -1,4 +1,4 @@
-package com.hitesh.quizapp.model;
+package com.hitesh.quizservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,9 +1,9 @@
-package com.hitesh.quizapp.controller;
+package com.hitesh.quizservice.controller;
 
-import com.hitesh.quizapp.model.QuestionWrapper;
-import com.hitesh.quizapp.model.Quiz;
-import com.hitesh.quizapp.model.QuizResponse;
-import com.hitesh.quizapp.service.QuizService;
+import com.hitesh.quizservice.model.QuestionWrapper;
+import com.hitesh.quizservice.model.QuizDto;
+import com.hitesh.quizservice.model.QuizResponse;
+import com.hitesh.quizservice.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +19,9 @@ public class QuizController {
 
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(
-            @RequestParam("title") String title,
-            @RequestParam("category") String category,
-            @RequestParam("numOfQuestion") int numOfQuestion
-    ) {
-        return service.createQuiz(title, category, numOfQuestion);
+            @RequestBody QuizDto quizDto
+            ) {
+        return service.createQuiz(quizDto.title, quizDto.category, quizDto.limit);
     }
 
     @GetMapping("get/{id}")
